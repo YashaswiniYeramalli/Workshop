@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
@@ -68,6 +68,106 @@
         var sno=document.getElementById('sno').value;
         if(Number(sno)==0)
         div.innerText="Division Not Possible";
+        else{
+        var fno=document.getElementById('fno').value;
+        div.innerText=Number(fno)/Number(sno);
+        }
+    }
+    
+
+</script>
+</html>
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+           
+    </style>
+</head>
+<body>
+<div style="background-color: black;">
+    <br>
+    <h1 style="margin-left: 700px; color: white;" >CALCULATOR</h1>
+    
+    <input type="button" value="1" onclick="dis('1')" style="width:50px; height:50px; margin-left:700px" >
+    <input type="button" value="2" onclick="dis('2')"style="width:50px; height:50px;"/>
+    <input type="button" value="3" onclick="dis('3')"style="width:50px; height:50px;"/>
+    <br> 
+    <input type="button" value="4" onclick="dis('4')"style="width:50px; height:50px;margin-left:700px"/>
+    <input type="button" value="5" onclick="dis('5')"style="width:50px; height:50px;"/>
+    <input type="button" value="6" onclick="dis('6')"style="width:50px; height:50px;"/>
+    <input type="number" placeholder="F num" id="fno" style="width: 100px; height: 50px; ">
+    <br>
+    <input type="button" value="7" onclick="dis('7')"style="width:50px; height:50px;margin-left:700px"/>
+    <input type="button" value="8" onclick="dis('8')"style="width:50px; height:50px;"/>
+    <input type="button" value="9" onclick="dis('9')"style="width:50px; height:50px;"/>
+    <input type="number" placeholder="S num" id="sno" style="width: 100px; height: 50px;">
+    <br>
+    <br>
+    <input type="button" value="0" onclick="dis('0')"style="width:50px; height:50px;margin-left:700px"/>
+    
+
+    
+    
+    <br>
+    <div style="width: 160px; height: 50px; margin-left: 760px;margin-top: 10px;background-color:teal;">
+        <h1 id="result" style=" margin-left: 34%;">   </h1>
+        <br>
+    </div>
+  <br>
+    <button onclick="sum()" style="width: 100px; height: 100px; margin-left: 700px;background-color:  coral;"> sum</button>
+    <button onclick="sub()" style="width: 100px; height: 100px;background-color:  lightgreen;"> sub</button>
+    <br><br>
+    <button onclick="multi()" style="width: 100px; height: 100px; margin-left: 700px;background-color:  lightpink;"> multiply</button>
+    <button onclick="divide()" style="width: 100px; height: 100px;background-color:  lightcyan;"> divide</button>
+
+    
+</div>
+</body>
+<script>
+    var c=0;
+    var n1,n2;
+    function dis(n)
+    {   if(c==0){
+            n1=n;
+            c++;
+            document.getElementById('fno').value=n1;
+        }
+        else{
+            n2=n;
+            c=0;
+            document.getElementById('sno').value=n2;
+        }
+        
+    }
+    function sum()
+    {
+        var sum=document.getElementById('result')
+        var fno=document.getElementById('fno').value;
+        var sno=document.getElementById('sno').value;
+        sum.innerText=Number(fno)+Number(sno);
+    }
+    function sub()
+    {
+        var sub =document.getElementById('result')
+        var fno=document.getElementById('fno').value;
+        var sno=document.getElementById('sno').value;
+        sub.innerText=Number(fno)-Number(sno);
+    }
+    function multi()
+    {
+        var mult=document.getElementById('result')
+        var fno=document.getElementById('fno').value;
+        var sno=document.getElementById('sno').value;
+        mult.innerText=Number(fno)*Number(sno);
+    }
+    function divide()
+    {   var div=document.getElementById('result');
+        var sno=document.getElementById('sno').value;
+        if(Number(sno)==0)
+        div.innerText="invalid";
         else{
         var fno=document.getElementById('fno').value;
         div.innerText=Number(fno)/Number(sno);
