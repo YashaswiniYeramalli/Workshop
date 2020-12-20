@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+           
+    </style>
+</head>
+<body>
+<div style="width:800px ;height: 600px; margin-left: 200px;">
+    <br>
+    <h1 style="margin-left: 300px;" >CALCULATOR</h1>
+    <input type="number" placeholder="F num" id="fno" style="width: 100px; height: 50px; margin-left: 300px;">
+    <input type="number" placeholder="S num" id="sno" style="width: 100px; height: 50px;">
+    <br>
+    <div style="width: 100px; height: 120px; margin-left: 360px;margin-top: 10px;background-color:teal;">
+        <br>
+        <h1 id="add" style=" margin-left: 34%;">   </h1>
+        <br>
+    </div>
+    <br>
+    <button onclick="infno()" style="width: 50px; height: 50px; margin-left: 320px;background-color: gray;">1</button>
+    <button onclick="infno()" style="width: 50px; height: 50px;background-color: gray;"> 2</button>
+    <button onclick="infno()" style="width: 50px; height: 50px;background-color: gray;"> 3</button>
+    <br>
+    <button onclick="infno()" style="width: 50px; height: 50px; margin-left: 320px;background-color: gray;">4</button>
+    <button onclick="infno()" style="width: 50px; height: 50px;background-color: gray;"> 5</button>
+    <button onclick="infno()" style="width: 50px; height: 50px;background-color: gray;"> 6</button>
+    <br>
+    <button onclick="infno()" style="width: 50px; height: 50px; margin-left: 320px;background-color: gray;">7</button>
+    <button onclick="infno()" style="width: 50px; height: 50px;background-color: gray;">8</button>
+    <button onclick="infno()" style="width: 50px; height: 50px;background-color: gray;">9</button>
+    <br>
+    <button onclick="infno()" style="width: 50px; height: 50px; margin-left: 374px;background-color: gray;">0</button>
+    <br><br>
+    <button onclick="sum()" style="width: 100px; height: 100px; margin-left: 300px;background-color:  coral;"> sum</button>
+    <button onclick="sub()" style="width: 100px; height: 100px;background-color:  lightgreen;"> sub</button>
+    <br><br>
+    <button onclick="multi()" style="width: 100px; height: 100px; margin-left: 300px;background-color:  lightpink;"> multiply</button>
+    <button onclick="divide()" style="width: 100px; height: 100px;background-color:  lightcyan;"> divide</button>
+
+    
+</div>
+</body>
+<script>
+    function sum()
+    {
+        var sum=document.getElementById('add')
+        var fno=document.getElementById('fno').value;
+        var sno=document.getElementById('sno').value;
+        sum.innerText=Number(fno)+Number(sno);
+    }
+    function sub()
+    {
+        var sub =document.getElementById('add')
+        var fno=document.getElementById('fno').value;
+        var sno=document.getElementById('sno').value;
+        sub.innerText=Number(fno)-Number(sno);
+    }
+    function multi()
+    {
+        var mult=document.getElementById('add')
+        var fno=document.getElementById('fno').value;
+        var sno=document.getElementById('sno').value;
+        mult.innerText=Number(fno)*Number(sno);
+    }
+    function divide()
+    {   var div=document.getElementById('add');
+        var sno=document.getElementById('sno').value;
+        if(Number(sno)==0)
+        div.innerText="Division Not Possible";
+        else{
+        var fno=document.getElementById('fno').value;
+        div.innerText=Number(fno)/Number(sno);
+        }
+    }
+    
+
+</script>
+</html>
