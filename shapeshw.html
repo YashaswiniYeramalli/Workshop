@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 style="margin-left: 700px; font-family: Georgia, 'Times New Roman', Times, serif;color: brown;">SHAPE CHANGER</h2>
+<div style="background-color: grey;height: 600px;width:600px; margin-left: 500px; ">
+    <br>
+    <br>
+    <div id ="shape" style="height: 100px;width:300px;background-color:grey;margin-left: 200px;"></div>
+   
+          <button onclick="RECT()" style=" width:100px ;height: 100px; margin-left: 150px;margin-top: 200px;" >RECTANGLE</button>
+          <button onclick="SQU()" style=" width:100px ;height: 100px; ">SQUARE</button>
+          <button onclick="CIR()"style=" width:100px ;height: 100px; ">CIRCLE</button>
+          
+      </body>
+      <script>
+          function RECT(){  
+              document.getElementById('shape').style['width']='200px';
+              document.getElementById('shape').style['height']='100px';
+              document.getElementById('shape').style['background-color']='red';
+              document.getElementById('shape').style['border-radius']='0%';
+            }
+            function SQU()
+            {
+                document.getElementById('shape').style['width']='200px';
+                document.getElementById('shape').style['height']='200px';
+                document.getElementById('shape').style['background-color']='yellow';
+                document.getElementById('shape').style['border-radius']='0%';
+            }
+            function CIR()
+            {
+                document.getElementById('shape').style['background-color']='green';
+                document.getElementById('shape').style['border-radius']='50%';
+            }
+           
+      </script>
+
+</body>
+</html>
