@@ -188,7 +188,8 @@
         div.innerText="invalid";
         else{
         var fno=document.getElementById('fno').value;
-        div.innerText=Number(fno)/Number(sno);
+        var d=fno/sno;
+        div.innerText=Number(d.toFixed(5));
         }
     }
     
