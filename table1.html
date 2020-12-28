@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.loader  {    
+                                  border: 16px solid #f3f3f349;
+                                     border-radius: 50%;
+                                     
+                                     width: 50px;
+                                     height: 50px;
+                                     
+                                     animation: spin 1s linear 2;
+
+                              }
+.ta {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.ta thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.ta th,
+.ta td {
+  padding: 12px 15px;
+}
+
+.ta tbody tr {
+  border-bottom: 1px solid lightgray;
+}
+
+.ta tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight:bolder;
+  color: #009879;
+}
+
+@keyframes spin {
+        0% {margin-left:4500px ; background-color:  #ec2d73;}
+    25%{margin-left:500px ;margin-top: 30px;background-color: #eb5324;transform: rotate(90deg); }
+    50%{margin-left:500px ; margin-top: 0px;background-color: #fdc800;transform: rotate(180deg); }
+    100% { margin-left:500px ;margin-top: 30px; ; background-color: #47b264 ; transform: rotate(360deg); }
+    }
+                   
+
+    </style>
+</head>
+<body style="background-image: url('photo1.jpg'); width: 100%;height: 100%;">
+
+  <div style="display: flex;">
+
+    <div style=" margin-left: 35%; margin-top: 16%;" >
+    <table border=5 class="ta" id="ta">
+        <thead>
+        <tr><th>NAME</th><th>BATCH  </th><th>PLACEMENT</th></tr>
+        </thead>
+        <tbody >
+        <tr style=" background-color: white"><td>Yashaswini</td><td>COE</td><td>Google</td></tr>
+        <tr class="active-row" style="color: #009879 ; font-weight:bolder;"><td>Sai</td><td>IT</td><td>Amazon</td></tr>
+        <tr style=" background-color: white"><td>Mahek</td><td>MCE</td><td>Fractal</td></tr>
+        <tr class="active-row" style="color: #009879; font-weight:bolder;"><td>Shachi</td><td>SE</td><td>GoldMan Sachs</td></tr>
+        </tbody>
+       </table>
+       </div>
+       <button style="height: 50px;width: 100px; margin-top: 22%; background-color: #f3f3f3" onclick="ani()">More</button>
+       </div>
+       <div id='a' style=" margin-left:400px ;"></div>
+
+       
+</body>
+<script>
+    c=0;
+
+function more()
+{
+
+setTimeout(dis,2000)
+ if(c==0)
+ {
+ var dtu={
+            student:[]
+        }
+        dtu.student.push({'name':'Anushka','branch':'IT','comp':'Citi Bank'},
+        {'name':'Harshita','branch':'SE','comp':'Amazon'},
+        {'name':'Amogha','branch':'COE','comp':'Infosys'},
+        {'name':'Hanan','branch':'COE','comp':'Microsoft'}
+        )
+        var t=document.getElementById('ta')
+    
+        for(var i=0;i<dtu.student.length;++i){
+            if(i%2!=0)
+            {
+            t.innerHTML+='<tr style="color: #009879; font-weight:bolder; background-color: #f3f3f3 " ><td>'+dtu.student[i].name+'</td>'+'<td>'+dtu.student[i].branch+'</td>'+'<td>'+dtu.student[i].comp+'</td></tr>'
+            }
+            else
+            {
+        t.innerHTML+='<tr style=" background-color: white"><td>'+dtu.student[i].name+'</td>'+'<td>'+dtu.student[i].branch+'</td>'+'<td>'+dtu.student[i].comp+'</td></tr>'
+            }
+        }
+        c++;
+        
+}
+
+}
+function ani()
+{       var element=document.getElementById("a");
+        element.classList.add("loader")
+        setTimeout(dis,2000)
+        setTimeout(more,2000)
+        //element.style.visibility="hidden"
+}
+function dis()
+{
+    var element=document.getElementById("a");
+    element.style.visibility="hidden"
+}
+</script>
+</html>
